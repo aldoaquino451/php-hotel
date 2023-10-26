@@ -71,6 +71,24 @@ foreach ($hotels as $value) {
 
 <body>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <form method="get" action="index.php" class="my-4">
+
+          <div class="my-3">
+            <label for="inputAddress" class="form-label">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+
+          <div class="my-3">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <div class="container my-5 ">
 
     <div class="card p-3">
@@ -78,34 +96,34 @@ foreach ($hotels as $value) {
 
         <thead class="table-dark">
           <tr>
-            <? foreach ($hotels[0] as $key => $value) { ?>
+            <?php foreach ($hotels[0] as $key => $value): ?>
               <th scope='col' class='text-capitalize'>
-                <? echo str_replace('_', ' ', $key) ?>
+                <?php echo str_replace('_', ' ', $key) ?>
               </th>
-            <? } ?>
+            <?php endforeach; ?>
           </tr>
         </thead>
 
         <tbody>
-          <? foreach ($hotels as $hotel) { ?>
+          <?php foreach ($hotels as $hotel) { ?>
             <tr>
               <th scope="row">
-                <? echo $hotel['name'] ?>
+                <?php echo $hotel['name'] ?>
               </th>
               <td>
-                <? echo $hotel['description'] ?>
+                <?php echo $hotel['description'] ?>
               </td>
-              <td class="<? echo $hotel['parking'] ? 'text-green' : 'text-danger' ?>">
-                <? echo $hotel['parking'] ? '&check;' : '&cross;' ?>
-              </td>
-              <td>
-                <? echo $hotel['vote'] ?>
+              <td class="<?php echo $hotel['parking'] ? 'text-green' : 'text-danger' ?>">
+                <?php echo $hotel['parking'] ? '&check;' : '&cross;' ?>
               </td>
               <td>
-                <? echo $hotel['distance_to_center'] ?> km
+                <?php echo $hotel['vote'] ?>
+              </td>
+              <td>
+                <?php echo $hotel['distance_to_center'] ?> km
               </td>
             </tr>
-          <? } ?>
+          <?php } ?>
         </tbody>
 
       </table>
