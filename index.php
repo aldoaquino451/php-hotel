@@ -37,7 +37,11 @@ $hotels = [
     'distance_to_center' => 50
   ],
 ];
-var_dump($hotels);
+// var_dump($hotels);
+
+foreach ($hotels as $value) {
+  echo " $value[name] : $value[description], $value[parking] parcheggio, $value[vote] stelle, $value[distance_to_center] km; <br>";
+}
 
 ?>
 
@@ -61,11 +65,28 @@ var_dump($hotels);
 
 <body>
 
-  <div class="container">
+  <div class="container my-5 ">
 
-    <ul>
-      <li>ciao</li>
-    </ul>
+    <? ?>
+    <div>
+      <h4>
+        <? echo $hotels[0]['name']; ?>
+      </h4>
+      <ul>
+        <li>
+          <? echo $hotels[0]['description']; ?>
+        </li>
+        <li>
+          <? echo $hotels[0]['parking']; ?>
+        </li>
+        <li>
+          <? echo $hotels[0]['vote']; ?>
+        </li>
+        <li>
+          <? echo $hotels[0]['distance_to_center']; ?>
+        </li>
+      </ul>
+    </div>
 
   </div>
 
