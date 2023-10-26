@@ -40,7 +40,12 @@ $hotels = [
 // var_dump($hotels);
 
 foreach ($hotels as $value) {
-  echo " $value[name] : $value[description], $value[parking] parcheggio, $value[vote] stelle, $value[distance_to_center] km; <br>";
+  echo
+    $value['name'] . ': ' .
+    $value['description'] . ', ' .
+    $value['parking'] . ', ' .
+    $value['vote'] . ' stelle, ' .
+    $value['distance_to_center'] . ' km;' . '<br>';
 }
 
 ?>
@@ -67,26 +72,27 @@ foreach ($hotels as $value) {
 
   <div class="container my-5 ">
 
-    <? ?>
-    <div>
-      <h4>
-        <? echo $hotels[0]['name']; ?>
-      </h4>
-      <ul>
-        <li>
-          <? echo $hotels[0]['description']; ?>
-        </li>
-        <li>
-          <? echo $hotels[0]['parking']; ?>
-        </li>
-        <li>
-          <? echo $hotels[0]['vote']; ?>
-        </li>
-        <li>
-          <? echo $hotels[0]['distance_to_center']; ?>
-        </li>
-      </ul>
-    </div>
+    <? foreach ($hotels as $hotel) { ?>
+      <div>
+        <h4>
+          <? echo $hotel['name']; ?>
+        </h4>
+        <ul>
+          <li>
+            <? echo $hotel['description']; ?>
+          </li>
+          <li>
+            <? echo $hotel['parking'] ? '&check;' : '&cross;'; ?>
+          </li>
+          <li>
+            <? echo $hotel['vote']; ?>
+          </li>
+          <li>
+            <? echo $hotel['distance_to_center']; ?>
+          </li>
+        </ul>
+      </div>
+    <? } ?>
 
   </div>
 
