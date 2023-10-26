@@ -76,11 +76,11 @@ foreach ($hotels as $value) {
 
         <thead class="table-dark">
           <tr>
-            <th scope="col" class="text-capitalize">hotel</th>
-            <th scope="col" class="text-capitalize">description</th>
-            <th scope="col" class="text-capitalize">parking</th>
-            <th scope="col" class="text-capitalize">vote</th>
-            <th scope="col" class="text-capitalize">distance to center</th>
+            <? foreach ($hotels[0] as $key => $value) { ?>
+              <th scope="col" class="text-capitalize">
+                <? echo str_replace('_', ' ', $key) ?>
+              </th>
+            <? } ?>
           </tr>
         </thead>
 
