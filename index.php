@@ -102,7 +102,7 @@ foreach ($hotels as $value) {
                 <? echo $hotel['vote'] ?>
               </td>
               <td>
-                <? echo $hotel['distance_to_center'] ?>
+                <? echo $hotel['distance_to_center'] ?> km
               </td>
             </tr>
           <? } ?>
