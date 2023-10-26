@@ -40,8 +40,7 @@ $hotels = [
 // var_dump($hotels);
 
 foreach ($hotels as $value) {
-  echo
-    $value['name'] . ': ' .
+  $value['name'] . ': ' .
     $value['description'] . ', ' .
     $value['parking'] . ', ' .
     $value['vote'] . ' stelle, ' .
@@ -72,27 +71,43 @@ foreach ($hotels as $value) {
 
   <div class="container my-5 ">
 
-    <? foreach ($hotels as $hotel) { ?>
-      <div>
-        <h4>
-          <? echo $hotel['name']; ?>
-        </h4>
-        <ul>
-          <li>
-            <? echo $hotel['description']; ?>
-          </li>
-          <li>
-            <? echo $hotel['parking'] ? '&check;' : '&cross;'; ?>
-          </li>
-          <li>
-            <? echo $hotel['vote']; ?>
-          </li>
-          <li>
-            <? echo $hotel['distance_to_center']; ?>
-          </li>
-        </ul>
-      </div>
-    <? } ?>
+    <div class="card p-3">
+      <table class="table table-hover ">
+
+        <thead class="table-dark">
+          <tr>
+            <th scope="col" class="text-capitalize">hotel</th>
+            <th scope="col" class="text-capitalize">description</th>
+            <th scope="col" class="text-capitalize">parking</th>
+            <th scope="col" class="text-capitalize">vote</th>
+            <th scope="col" class="text-capitalize">distance to center</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <? foreach ($hotels as $hotel) { ?>
+            <tr>
+              <th scope="row">
+                <? echo $hotel['name']; ?>
+              </th>
+              <td>
+                <? echo $hotel['description']; ?>
+              </td>
+              <td>
+                <? echo $hotel['parking'] ? '&check;' : '&cross;'; ?>
+              </td>
+              <td>
+                <? echo $hotel['vote']; ?>
+              </td>
+              <td>
+                <? echo $hotel['distance_to_center']; ?>
+              </td>
+            </tr>
+          <? } ?>
+        </tbody>
+
+      </table>
+    </div>
 
   </div>
 
