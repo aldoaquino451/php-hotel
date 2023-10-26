@@ -1,3 +1,7 @@
-.text-green {
-  color: green;
+.text_green {
+  color: green !important;
+}
+
+.fa-star {
+  color: yellowgreen;
 }

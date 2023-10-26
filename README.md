@@ -25,4 +25,6 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
 - prendi una tabella bootstrap e applica gli stessi cicli dentro la tabella
 
 #### Bonus: 
-- bonus 
+- inserisci un form con due input e un button
+- nel primo inserisco un radio button per indicare se il parcheggio è presente o no
+- nel secondo inserisco una select dove scelto il numero di stelle 
