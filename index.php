@@ -62,6 +62,8 @@ foreach ($hotels as $value) {
     integrity='sha512-r0fo0kMK8myZfuKWk9b6yY8azUnHCPhgNz/uWDl2rtMdWJlk7gmd9socvGZdZzICwAkMgfTkVrplDahQ07Gi0A=='
     crossorigin='anonymous' />
 
+  <link rel="stylesheet" href="./css/style.css" />
+
   <!-- titolo -->
   <title>PHP Hotel</title>
 
@@ -77,7 +79,7 @@ foreach ($hotels as $value) {
         <thead class="table-dark">
           <tr>
             <? foreach ($hotels[0] as $key => $value) { ?>
-              <th scope="col" class="text-capitalize">
+              <th scope='col' class='text-capitalize'>
                 <? echo str_replace('_', ' ', $key) ?>
               </th>
             <? } ?>
@@ -88,19 +90,19 @@ foreach ($hotels as $value) {
           <? foreach ($hotels as $hotel) { ?>
             <tr>
               <th scope="row">
-                <? echo $hotel['name']; ?>
+                <? echo $hotel['name'] ?>
               </th>
               <td>
-                <? echo $hotel['description']; ?>
+                <? echo $hotel['description'] ?>
+              </td>
+              <td class="<? echo $hotel['parking'] ? 'text-green' : 'text-danger' ?>">
+                <? echo $hotel['parking'] ? '&check;' : '&cross;' ?>
               </td>
               <td>
-                <? echo $hotel['parking'] ? '&check;' : '&cross;'; ?>
+                <? echo $hotel['vote'] ?>
               </td>
               <td>
-                <? echo $hotel['vote']; ?>
-              </td>
-              <td>
-                <? echo $hotel['distance_to_center']; ?>
+                <? echo $hotel['distance_to_center'] ?>
               </td>
             </tr>
           <? } ?>
